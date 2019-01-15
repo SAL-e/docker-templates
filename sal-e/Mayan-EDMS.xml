@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Date>2019-01-15</Date>
+  <Beta>True</Beta>
+  <Category>Productivity:</Category>
+  <Name>Mayan-EDMS</Name>
+  <Project>https://www.mayan-edms.com/</Project>
+  <Changes>
+  </Changes>
+  <Overview>
+    Mayan EDMS - is an electronic vault for your documents.
+  </Overview>
+  <Description>
+    Mayan EDMS is an electronic vault for your documents. With Mayan EDMS you will never lose another document to floods, fire, theft, sabotage, fungus or decomposition. Its advanced search and categorization capabilities will help you reduce the time to find the information you need. It is free open source and integrates with your existing equipment, that means low to no initial investment, and even lower total cost of ownership, reducing operational costs has never been this easy. Being open source its code is freely available, allowing you to see how it is handling your documents if you ever need to, you will be glad you choose Mayan EDMS on your next audit. Initially released in 2011 and with thousands of installations worldwide, Mayan EDMS is a mature and time tested software you can rely on.
+  </Description>
+  <Registry>https://hub.docker.com/r/mayanedms/mayanedms/</Registry>
+  <GitHub>https://github.com/limetech/dockerapp-sync</GitHub>
+  <Repository>mayanedms/mayanedms</Repository>
+  <Support>https://forums.unraid.net/topic/.../</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8000</HostPort>
+        <ContainerPort>8000</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/var/lib/mayan</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8000]/</WebUI>
+  <Icon>https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web Interface Port" Target="8000" Default="8000" Mode="tcp" Display="always-hide" Required="true"
+       Description="This is Mayan-EDMS's Web UI port you can access via a web browser.">8000</Config>
+
+</Container>
