@@ -45,4 +45,6 @@
   <Config Type="Port" Name="Web Interface Port" Target="8000" Default="8000" Mode="tcp" Display="always-hide" Required="true"
        Description="This is Mayan-EDMS's Web UI port you can access via a web browser.">8000</Config>
 
+  <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where Mayan-EDMS will store all documents."></Config>
 </Container>
