@@ -37,6 +37,12 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <Environment>
+    <Variable>
+      <Value>django.db.backends.postgresql</Value>
+      <Name>MAYAN_DATABASE_ENGINE</Name>
+    </Variable>
+  </Environment>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
   <Icon>https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo.png</Icon>
 
@@ -47,4 +53,7 @@
 
   <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="advanced-hide" Required="true"
        Description="This is where Mayan-EDMS will store all documents."></Config>
+
+  <Config Name="MAYAN_DATABASE_ENGINE" Target="MAYAN_DATABASE_ENGINE" Default="" Mode=""  Type="Variable" Display="always" Required="false" Mask="false"
+       Description="The database backends supported by this Docker image are: 'django.db.backends.postgresql', 'django.db.backends.mysql' or 'django.db.backends.sqlite3'"></Config>
 </Container>
