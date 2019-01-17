@@ -30,6 +30,10 @@
     </Variable>
     <Variable>
       <Value></Value>
+      <Name>MAYAN_DATABASE_USER</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
       <Name>MAYAN_DATABASE_PASSWORD</Name>
     </Variable>
     <Variable>
@@ -105,9 +109,12 @@
     Description="The database backends supported by this Docker image are: 'django.db.backends.postgresql', 'django.db.backends.mysql' or 'django.db.backends.sqlite3'(Default)"></Config>
 
   <Config Type="Variable" Name="MAYAN_DATABASE_NAME" Target="MAYAN_DATABASE_NAME" Default="" Mode="" Display="advanced-hide" Required="false" Mask="false"
+    Description="This optional environment variable can be used to define the database name that Mayan EDMS will connect to. Default:'mayan'"></Config>
+
+  <Config Type="Variable" Name="MAYAN_DATABASE_USER" Target="MAYAN_DATABASE_USER" Default="" Mode="" Display="advanced-hide" Required="false" Mask="false"
     Description="This optional environment variable is used to set the username that will be used to connect to the database. Default:'mayan'"></Config>
 
-  <Config Type="Variable" Name="MAYAN_DATABASE_PASSWORD" Target="MAYAN_DATABASE_PASSWORD" Default="" Mode="" Display="advanced-hide" Required="false" Mask="false"
+  <Config Type="Variable" Name="MAYAN_DATABASE_PASSWORD" Target="MAYAN_DATABASE_PASSWORD" Default="" Mode="" Display="advanced-hide" Required="false" Mask="true"
     Description="This optional environment variable is used to set the password that will be used to connect to the database. Default: ''"></Config>
 
   <Config Type="Variable" Name="MAYAN_DATABASE_HOST" Target="MAYAN_DATABASE_HOST" Default="" Mode="" Display="advanced-hide" Required="false" Mask="false"
