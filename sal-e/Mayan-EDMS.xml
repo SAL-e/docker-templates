@@ -39,8 +39,56 @@
   </Data>
   <Environment>
     <Variable>
-      <Value>django.db.backends.postgresql</Value>
+      <Value>django.db.backends.sqlite3</Value>
       <Name>MAYAN_DATABASE_ENGINE</Name>
+    </Variable>
+    <Variable>
+      <Value>mayan</Value>
+      <Name>MAYAN_DATABASE_NAME</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MAYAN_DATABASE_PASSWORD</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MAYAN_DATABASE_HOST</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MAYAN_DATABASE_PORT</Name>
+    </Variable>
+    <Variable>
+      <Value>60</Value>
+      <Name>MAYAN_DATABASE_CONN_MAX_AGE</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MAYAN_BROKER_URL</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MAYAN_CELERY_RESULT_BACKEND</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>MAYAN_SETTINGS_MODULE</Name>
+    </Variable>
+    <Variable>
+      <Value>2</Value>
+      <Name>MAYAN_GUNICORN_WORKERS</Name>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>MAYAN_WORKER_FAST_CONCURRENCY</Name>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>MAYAN_WORKER_MEDIUM_CONCURRENCY</Name>
+    </Variable>
+    <Variable>
+      <Value>1</Value>
+      <Name>MAYAN_WORKER_SLOW_CONCURRENCY</Name>
     </Variable>
   </Environment>
   <WebUI>http://[IP]:[PORT:8000]/</WebUI>
@@ -48,12 +96,48 @@
 
   <Network Default="bridge">bridge</Network>
 
-  <Config Type="Port" Name="Web Interface Port" Target="8000" Default="8000" Mode="tcp" Display="always-hide" Required="true"
-       Description="This is Mayan-EDMS's Web UI port you can access via a web browser.">8000</Config>
+  <Config Type="Port" Name="Web Interface Port" Target="8000" Default="8000" Mode="tcp" Display="always" Required="true"
+    Description="This is Mayan-EDMS's Web UI port you can access via a web browser.">8000</Config>
 
-  <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="advanced-hide" Required="true"
-       Description="This is where Mayan-EDMS will store all documents."></Config>
+  <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="always" Required="true"
+    Description="This is where Mayan-EDMS will store all documents."></Config>
 
-  <Config Name="MAYAN_DATABASE_ENGINE" Target="MAYAN_DATABASE_ENGINE" Default="" Mode=""  Type="Variable" Display="always" Required="false" Mask="false"
-       Description="The database backends supported by this Docker image are: 'django.db.backends.postgresql', 'django.db.backends.mysql' or 'django.db.backends.sqlite3'"></Config>
+  <Config Name="MAYAN_DATABASE_ENGINE" Target="MAYAN_DATABASE_ENGINE" Default="django.db.backends.sqlite3" Mode=""  Type="Variable" Display="always-hide" Required="false" Mask="false"
+    Description="The database backends supported by this Docker image are: 'django.db.backends.postgresql', 'django.db.backends.mysql' or 'django.db.backends.sqlite3'"></Config>
+
+  <Config Name="MAYAN_DATABASE_NAME" Target="MAYAN_DATABASE_NAME" Default="mayan" Mode=""  Type="Variable" Display="always-hide" Required="false" Mask="false"
+    Description="This optional environment variable is used to set the username that will be used to connect to the database."></Config>
+
+  <Config Name="MAYAN_DATABASE_PASSWORD" Target="MAYAN_DATABASE_PASSWORD" Default="" Mode=""  Type="Variable" Display="always-hide" Required="false" Mask="false"
+    Description="This optional environment variable is used to set the password that will be used to connect to the database."></Config>
+
+  <Config Name="MAYAN_DATABASE_HOST" Target="MAYAN_DATABASE_HOST" Default="" Mode=""  Type="Variable" Display="always-hide" Required="false" Mask="false"
+    Description="This optional environment variable is used to set the hostname that will be used to connect to the database. This can be the hostname of another container or an IP address."></Config>
+
+  <Config Name="MAYAN_DATABASE_PORT" Target="MAYAN_DATABASE_PORT" Default="" Mode=""  Type="Variable" Display="always-hide" Required="false" Mask="false"
+    Description="This optional environment variable is used to set the port number to use when connecting to the database. An empty string means the default port. Not used with SQLite."></Config>
+
+  <Config Name="MAYAN_DATABASE_CONN_MAX_AGE" Target="MAYAN_DATABASE_CONN_MAX_AGE" Default="60" Mode=""  Type="Variable" Display="always-hide" Required="false" Mask="false"
+    Description="Amount in seconds to keep a database connection alive. Allow reuse of database connections."></Config>
+
+  <Config Name="MAYAN_BROKER_URL" Target="MAYAN_BROKER_URL" Default="" Mode=""  Type="Variable" Display="advanced" Required="false" Mask="false"
+    Description="This optional environment variable determines the broker that Celery will use to relay task messages between the frontend code and the background workers."></Config>
+
+  <Config Name="MAYAN_CELERY_RESULT_BACKEND" Target="MAYAN_CELERY_RESULT_BACKEND" Default="" Mode=""  Type="Variable" Display="advanced-hide" Required="false" Mask="false"
+    Description="This optional environment variable determines the results backend that Celery will use to relay result messages from the background workers to the frontend code."></Config>
+
+  <Config Name="MAYAN_SETTINGS_MODULE" Target="MAYAN_SETTINGS_MODULE" Default="" Mode=""  Type="Variable" Display="advanced-hide" Required="false" Mask="false"
+    Description="Optional. Allows loading an alternate settings file."></Config>
+
+  <Config Name="MAYAN_GUNICORN_WORKERS" Target="MAYAN_GUNICORN_WORKERS" Default="2" Mode=""  Type="Variable" Display="advanced-hide" Required="false" Mask="false"
+    Description="Optional. This environment variable controls the number of frontend workers that will be executed. If not specified the default is 2. For heavier loads, user a higher number. A formula recommended for this setting is the number of CPU cores + 1."></Config>
+
+  <Config Name="MAYAN_WORKER_FAST_CONCURRENCY" Target="MAYAN_WORKER_FAST_CONCURRENCY" Default="1" Mode=""  Type="Variable" Display="advanced-hide" Required="false" Mask="false"
+    Description="Optional. Changes the concurrency (number of child processes) of the Celery worker consuming the queues in the fast (low latency, short tasks) category. Default is 1. Use 0 to disable hardcoded concurrency and allow the Celery worker to launch its default number of child processes (equal to the number of CPUs detected)."></Config>
+
+  <Config Name="MAYAN_WORKER_MEDIUM_CONCURRENCY" Target="MAYAN_WORKER_MEDIUM_CONCURRENCY" Default="1" Mode=""  Type="Variable" Display="advanced-hide" Required="false" Mask="false"
+    Description="Optional. Changes the concurrency (number of child processes) of the Celery worker consuming the queues in the medium (medium latency, long running tasks) category. Default is 1. Use 0 to disable hardcoded concurrency and allow the Celery worker to launch its default number of child processes (equal to the number of CPUs detected)."></Config>
+
+  <Config Name="MAYAN_WORKER_SLOW_CONCURRENCY" Target="MAYAN_WORKER_SLOW_CONCURRENCY" Default="1" Mode=""  Type="Variable" Display="advanced-hide" Required="false" Mask="false"
+    Description="Optional. Changes the concurrency (number of child processes) of the Celery worker consuming the queues in the slow (high latency, very long running tasks) category. Default is 1. Use 0 to disable hardcoded concurrency and allow the Celery worker to launch its default number of child processes (equal to the number of CPUs detected)."></Config>
 </Container>
