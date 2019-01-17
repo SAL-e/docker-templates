@@ -8,7 +8,7 @@
   <Changes>
   </Changes>
   <Overview>
-    Mayan EDMS is an electronic vault for your documents. With Mayan EDMS you will never lose another document to floods, fire, theft, sabotage, fungus or decomposition. Its advanced search and categorization capabilities will help you reduce the time to find the information you need. It is free open source and integrates with your existing equipment, that means low to no initial investment, and even lower total cost of ownership, reducing operational costs has never been this easy. Being open source its code is freely available, allowing you to see how it is handling your documents if you ever need to, you will be glad you choose Mayan EDMS on your next audit. Initially released in 2011 and with thousands of installations worldwide, Mayan EDMS is a mature and time tested software you can rely on.
+    Mayan EDMS is an electronic vault for your documents.
   </Overview>
   <Description>
     Mayan EDMS is an electronic vault for your documents. With Mayan EDMS you will never lose another document to floods, fire, theft, sabotage, fungus or decomposition. Its advanced search and categorization capabilities will help you reduce the time to find the information you need. It is free open source and integrates with your existing equipment, that means low to no initial investment, and even lower total cost of ownership, reducing operational costs has never been this easy. Being open source its code is freely available, allowing you to see how it is handling your documents if you ever need to, you will be glad you choose Mayan EDMS on your next audit. Initially released in 2011 and with thousands of installations worldwide, Mayan EDMS is a mature and time tested software you can rely on.
@@ -96,7 +96,7 @@
   <Network Default="bridge">bridge</Network>
 
   <Config Type="Port" Name="Web Interface Port" Target="8000" Default="8000" Mode="tcp" Display="always-hide" Required="true"
-    Description="This is Mayan-EDMS's Web UI port you can access via a web browser.">8000</Config>
+    Description="This is Mayan-EDMS's Web UI port you can access via a web browser."></Config>
 
   <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="always-hide" Required="true"
     Description="This is where Mayan-EDMS will store all documents."></Config>
