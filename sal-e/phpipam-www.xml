@@ -124,7 +124,7 @@
     Description="MySQL allowed hosts (Default: localhost)"></Config>
 
   <Config Type="Variable" Name="IPAM_GMAPS_API_KEY" Target="IPAM_GMAPS_API_KEY" Default="" Mode="" Display="advanced-hide" Required="false" Mask="false"
-    Description="Google Maps and Geocode API Key (Default: "")"></Config>
+    Description="Google Maps and Geocode API Key (Default: \"\")"></Config>
 
   <Config Type="Variable" Name="PROXY_ENABLED" Target="PROXY_ENABLED" Default="false" Mode="" Display="advanced" Required="false" Mask="false"
     Description="Use proxy (Default: false)"></Config>
