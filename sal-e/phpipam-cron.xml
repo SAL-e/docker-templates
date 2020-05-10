@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2020-05-10</Date>
+  <Beta>True</Beta>
+  <Category>Productivity:</Category>
+  <Name>phpIPAM-cron</Name>
+  <Project>https://phpipam.net/</Project>
+  <Changes>
+  </Changes>
+  <Overview>
+    phpIPAM - Open source IP address management.
+  </Overview>
+  <Description>
+    phpipam is an open-source web IP address management application (IPAM). Its goal is to provide light, modern and useful IP address management. It is php-based application with MySQL database backend, using jQuery libraries, ajax and HTML5/CSS3 features.
+  </Description>
+  <Registry>https://hub.docker.com/r/phpipam/phpipam-cron</Registry>
+  <GitHub>https://github.com/limetech/dockerapp-sync</GitHub>
+  <Repository>phpipam/phpipam-cron</Repository>
+  <Support>https://forums.unraid.net/topic/.../</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Value></Value>
+      <Name>IPAM_DATABASE_HOST</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>IPAM_DATABASE_USER MySQL</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>IPAM_DATABASE_PASS</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>IPAM_DATABASE_NAME</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>IPAM_DATABASE_PORT</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>IPAM_DATABASE_WEBHOST</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>IPAM_GMAPS_API_KEY</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>PROXY_ENABLED</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>PROXY_SERVER</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>PROXY_PORT</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>PROXY_USE_AUTH</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>PROXY_USER</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>PROXY_PASS</Name>
+    </Variable>
+    <Variable>
+      <Value></Value>
+      <Name>SCAN_INTERVAL</Name>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>80</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <!-- <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/var/lib/mayan</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data> -->
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <Icon>https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo.png</Icon>
+
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Web Interface Port" Target="80" Default="80" Mode="tcp" Display="always-hide" Required="true"
+    Description="This is phpIPAM's Web UI port you can access via a web browser.">8000</Config>
+
+  <!-- <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="always-hide" Required="true"
+    Description="This is where Mayan-EDMS will store all documents."></Config> -->
+
+  <Config Type="Variable" Name="IPAM_DATABASE_HOST MySQL" Target="IPAM_DATABASE_HOST MySQL" Default="127.0.0.1" Mode="" Display="advanced-hide" Required="false" Mask="false"
+    Description="MySQL database host (Default: 127.0.0.1)"></Config>
+
+  <Config Type="Variable" Name="IPAM_DATABASE_USER" Target="IPAM_DATABASE_USER" Default="phpipam" Mode="" Display="advanced-hide" Required="false" Mask="false"
+    Description="MySQL database user (Default: phpipam)"></Config>
+
+  <Config Type="Variable" Name="IPAM_DATABASE_PASS" Target="IPAM_DATABASE_PASS" Default="phpipamadmin" Mode="" Display="advanced-hide" Required="false" Mask="true"
+    Description="MySQL database password (Default: phpipamadmin)"></Config>
+
+  <Config Type="Variable" Name="IPAM_DATABASE_NAME" Target="IPAM_DATABASE_NAME" Default="phpipam" Mode="" Display="advanced-hide" Required="false" Mask="false"
+    Description="MySQL database name (Default: phpipam)"></Config>
+
+  <Config Type="Variable" Name="IPAM_DATABASE_PORT" Target="IPAM_DATABASE_PORT" Default="3306" Mode="" Display="advanced-hide" Required="false" Mask="false"
+    Description="MySQL database port (Default: 3306)"></Config>
+
+  <Config Type="Variable" Name="IPAM_DATABASE_WEBHOST" Target="IPAM_DATABASE_WEBHOST" Default="localhost" Mode="" Display="advanced-hide" Required="false" Mask="false"
+    Description="MySQL allowed hosts (Default: localhost)"></Config>
+
+  <Config Type="Variable" Name="IPAM_GMAPS_API_KEY" Target="IPAM_GMAPS_API_KEY" Default="" Mode="" Display="advanced-hide" Required="false" Mask="false"
+    Description="Google Maps and Geocode API Key (Default: "")"></Config>
+
+  <Config Type="Variable" Name="PROXY_ENABLED" Target="PROXY_ENABLED" Default="false" Mode="" Display="advanced" Required="false" Mask="false"
+    Description="Use proxy (Default: false)"></Config>
+
+  <Config Type="Variable" Name="PROXY_SERVER" Target="PROXY_SERVER" Default="myproxy.something.com" Mode="" Display="advanced" Required="false" Mask="false"
+    Description="Proxy server (Default: myproxy.something.com)"></Config>
+
+  <Config Type="Variable" Name="PROXY_PORT" Target="PROXY_PORT" Default="8080" Mode="" Display="advanced" Required="false" Mask="false"
+    Description="Proxy port (Default: 8080)"></Config>
+
+  <Config Type="Variable" Name="PROXY_USE_AUTH" Target="PROXY_USE_AUTH" Default="false" Mode="" Display="advanced" Required="false" Mask="false"
+    Description="Proxy authentication (Default: false)"></Config>
+
+  <Config Type="Variable" Name="PROXY_USER" Target="PROXY_USER" Default="USERNAME" Mode="" Display="advanced" Required="false" Mask="false"
+    Description="Proxy username (default: USERNAME)"></Config>
+
+  <Config Type="Variable" Name="PROXY_PASS" Target="PROXY_PASS" Default="PASSWORD" Mode="" Display="advanced" Required="false" Mask="false"
+    Description="Proxy password (default: PASSWORD)"></Config>
+
+  <Config Type="Variable" Name="SCAN_INTERVAL" Target="SCAN_INTERVAL" Default="1h" Mode="" Display="advanced" Required="false" Mask="false"
+    Description="Network discovery job interval = 5m,10m,15m,30m,1h,2h,4h,6h,12h (default: 1h) [CRON Container only]"></Config>
+
+</Container>
