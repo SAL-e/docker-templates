@@ -26,7 +26,7 @@
     </Variable>
     <Variable>
       <Value></Value>
-      <Name>IPAM_DATABASE_USER MySQL</Name>
+      <Name>IPAM_DATABASE_USER</Name>
     </Variable>
     <Variable>
       <Value></Value>
@@ -105,7 +105,7 @@
   <!-- <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="always-hide" Required="true"
     Description="This is where Mayan-EDMS will store all documents."></Config> -->
 
-  <Config Type="Variable" Name="IPAM_DATABASE_HOST MySQL" Target="IPAM_DATABASE_HOST MySQL" Default="127.0.0.1" Mode="" Display="advanced-hide" Required="false" Mask="false"
+  <Config Type="Variable" Name="IPAM_DATABASE_HOST" Target="IPAM_DATABASE_HOST" Default="127.0.0.1" Mode="" Display="advanced-hide" Required="false" Mask="false"
     Description="MySQL database host (Default: 127.0.0.1)"></Config>
 
   <Config Type="Variable" Name="IPAM_DATABASE_USER" Target="IPAM_DATABASE_USER" Default="phpipam" Mode="" Display="advanced-hide" Required="false" Mask="false"
