@@ -95,7 +95,7 @@
     </Volume>
   </Data> -->
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <Icon>https://github.com/phpipam/phpipam/blob/master/css/images/favicon.png</Icon>
+  <Icon>https://phpipam.net/css/images/logo_icon.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
