@@ -95,7 +95,7 @@
     </Volume>
   </Data> -->
   <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <Icon>https://gitlab.com/mayan-edms/mayan-edms/raw/master/docs/_static/mayan_logo.png</Icon>
+  <Icon>https://github.com/phpipam/phpipam/blob/master/css/images/favicon.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
