@@ -100,7 +100,7 @@
   <Network Default="bridge">bridge</Network>
 
   <Config Type="Port" Name="Web Interface Port" Target="80" Default="80" Mode="tcp" Display="always-hide" Required="true"
-    Description="This is phpIPAM's Web UI port you can access via a web browser.">8000</Config>
+    Description="This is phpIPAM's Web UI port you can access via a web browser."></Config>
 
   <!-- <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="always-hide" Required="true"
     Description="This is where Mayan-EDMS will store all documents."></Config> -->
