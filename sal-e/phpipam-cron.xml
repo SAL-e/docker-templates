@@ -2,24 +2,25 @@
 <Container version="2">
   <Date>2020-05-10</Date>
   <Beta>True</Beta>
-  <Category>Productivity:</Category>
   <Name>phpIPAM-cron</Name>
-  <Project>https://phpipam.net/</Project>
+  <Repository>phpipam/phpipam-cron</Repository>
+  <Registry>https://hub.docker.com/r/phpipam/phpipam-cron</Registry>
   <Network>bridge</Network>
-  <Changes>
-  </Changes>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/.../</Support>
+  <Project>https://phpipam.net/</Project>
   <Overview>
     phpIPAM - Open source IP address management.
   </Overview>
+  <Category>Productivity:</Category>
+  <!-- <WebUI>http://[IP]:[PORT:80]/</WebUI> -->
+  <Icon>https://phpipam.net/css/images/logo_icon.png</Icon>
+  <Changes/>
   <Description>
     phpipam is an open-source web IP address management application (IPAM). Its goal is to provide light, modern and useful IP address management. It is php-based application with MySQL database backend, using jQuery libraries, ajax and HTML5/CSS3 features.
   </Description>
-  <Registry>https://hub.docker.com/r/phpipam/phpipam-cron</Registry>
   <GitHub>https://github.com/limetech/dockerapp-sync</GitHub>
-  <Repository>phpipam/phpipam-cron</Repository>
-  <Support>https://forums.unraid.net/topic/.../</Support>
   <BindTime>true</BindTime>
-  <Privileged>false</Privileged>
   <Environment>
     <Variable>
       <Value></Value>
@@ -80,13 +81,13 @@
   </Environment>
   <Networking>
     <Mode>bridge</Mode>
-    <!-- <Publish>
-      <Port>
+    <Publish>
+      <!-- <Port>
         <HostPort>80</HostPort>
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
-      </Port>
-    </Publish> -->
+      </Port> -->
+    </Publish>
   </Networking>
   <!-- <Data>
     <Volume>
@@ -95,8 +96,6 @@
       <Mode>rw</Mode>
     </Volume>
   </Data> -->
-  <!-- <WebUI>http://[IP]:[PORT:80]/</WebUI> -->
-  <Icon>https://phpipam.net/css/images/logo_icon.png</Icon>
 
   <!-- <Config Type="Port" Name="Web Interface Port" Target="80" Default="80" Mode="tcp" Display="always-hide" Required="true"
     Description="This is phpIPAM's Web UI port you can access via a web browser."></Config> -->
