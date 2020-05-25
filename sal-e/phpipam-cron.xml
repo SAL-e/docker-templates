@@ -5,6 +5,7 @@
   <Category>Productivity:</Category>
   <Name>phpIPAM-cron</Name>
   <Project>https://phpipam.net/</Project>
+  <Network>bridge</Network>
   <Changes>
   </Changes>
   <Overview>
@@ -96,9 +97,6 @@
   </Data> -->
   <!-- <WebUI>http://[IP]:[PORT:80]/</WebUI> -->
   <Icon>https://phpipam.net/css/images/logo_icon.png</Icon>
-
-  <!-- <Network Default="bridge">bridge</Network> -->
-  <Network>bridge</Network>
 
   <!-- <Config Type="Port" Name="Web Interface Port" Target="80" Default="80" Mode="tcp" Display="always-hide" Required="true"
     Description="This is phpIPAM's Web UI port you can access via a web browser."></Config> -->
