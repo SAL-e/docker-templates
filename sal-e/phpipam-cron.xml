@@ -94,13 +94,13 @@
       <Mode>rw</Mode>
     </Volume>
   </Data> -->
-  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <!-- <WebUI>http://[IP]:[PORT:80]/</WebUI> -->
   <Icon>https://phpipam.net/css/images/logo_icon.png</Icon>
 
   <Network Default="bridge">bridge</Network>
 
-  <Config Type="Port" Name="Web Interface Port" Target="80" Default="80" Mode="tcp" Display="always-hide" Required="true"
-    Description="This is phpIPAM's Web UI port you can access via a web browser."></Config>
+  <!-- <Config Type="Port" Name="Web Interface Port" Target="80" Default="80" Mode="tcp" Display="always-hide" Required="true"
+    Description="This is phpIPAM's Web UI port you can access via a web browser."></Config> -->
 
   <!-- <Config Type="Path" Name="Documents Storage Path" Target="/var/lib/mayan" Default="" Mode="rw" Display="always-hide" Required="true"
     Description="This is where Mayan-EDMS will store all documents."></Config> -->
