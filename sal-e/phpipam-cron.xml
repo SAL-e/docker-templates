@@ -79,13 +79,13 @@
   </Environment>
   <Networking>
     <Mode>bridge</Mode>
-    <Publish>
+    <!-- <Publish>
       <Port>
         <HostPort>80</HostPort>
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
-    </Publish>
+    </Publish> -->
   </Networking>
   <!-- <Data>
     <Volume>
@@ -97,7 +97,8 @@
   <!-- <WebUI>http://[IP]:[PORT:80]/</WebUI> -->
   <Icon>https://phpipam.net/css/images/logo_icon.png</Icon>
 
-  <Network Default="bridge">bridge</Network>
+  <!-- <Network Default="bridge">bridge</Network> -->
+  <Network>bridge</Network>
 
   <!-- <Config Type="Port" Name="Web Interface Port" Target="80" Default="80" Mode="tcp" Display="always-hide" Required="true"
     Description="This is phpIPAM's Web UI port you can access via a web browser."></Config> -->
